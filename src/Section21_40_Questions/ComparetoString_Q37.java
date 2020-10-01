@@ -1,0 +1,51 @@
+package Section21_40_Questions;
+
+import java.util.Scanner;
+
+/*Question:  compare two strings, if the characters in string 1 are present in string 2, 
+             then it should be put as such in output, else '+' should be put in output...
+             ignore case difference.
+             input 1:"New York"
+	         input 2:"NWYR"
+
+	         output:N+w+Y+r+*/
+
+public class ComparetoString_Q37 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+        /*Scanner se = new Scanner(System.in);
+		System.out.println("enter first String=");
+		String s = se.nextLine();
+		System.out.println("enter second String=");
+		String n = se.nextLine();*/
+
+		String s = "New York";
+		String n = "NWYR";
+		
+		String j = s.toUpperCase();// all string convert in upper case
+		String ans = "";
+		for (int i = 0; i < j.length(); i++) {
+			int count = 0;
+			char c = j.charAt(i);
+
+			for (int k = 0; k < n.length(); k++) {
+				char c1 = n.charAt(k);
+
+				if (c == c1) {// compairing two string
+					ans = ans + s.charAt(i);
+				} else {
+					count++;
+				}
+			}
+			if (count == n.length()) {// adding matching String +string
+				ans = ans + "+";
+			}
+		}
+		System.out.println(ans);// final outpute
+
+	}
+
+}
+
